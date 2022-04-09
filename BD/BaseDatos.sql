@@ -9,8 +9,7 @@ CREATE TABLE Cliente
 	Cedula VARCHAR(20),
 	Nombre VARCHAR(50),
 	Apellido VARCHAR(70),
-	Telefono VARCHAR(20),
-	FechaRegistro DATETIME
+	Telefono VARCHAR(20)
 )
 
 CREATE TABLE Producto
@@ -23,12 +22,9 @@ CREATE TABLE Producto
 CREATE TABLE Venta
 (
 	IdVenta INT IDENTITY PRIMARY KEY,
-	NumeroVenta INT,
-	NombreProducto VARCHAR(70),
 	Cantidad INT,
 	ValorUnitario DECIMAL(15,2),
 	ValorTotal DECIMAL(15,2),
-	FechaVenta DATETIME,
 	IdProducto INT,
 	IdCliente INT,
 	CONSTRAINT FK_Producto FOREIGN KEY (IdProducto) REFERENCES Producto (IdProducto),
